@@ -18,10 +18,10 @@ echo "\n---------------------------------------------------------------done"
 
 
 echo "Set bridged packets to traverse iptables rules."
-cat < /etc/sysctl.d/k8s.conf
+echo "
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
-EOF
+" >> /etc/sysctl.d/k8s.conf
 echo "\n---------------------------------------------------------------done"
 
 

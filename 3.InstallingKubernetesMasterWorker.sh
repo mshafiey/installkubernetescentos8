@@ -1,6 +1,7 @@
 
 echo "Add the Kubernetes repository to your package manager by creating the following file."
-cat < /etc/yum.repos.d/kubernetes.repo
+
+echo "
 [kubernetes]
 name=Kubernetes
 baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-$basearch
@@ -9,7 +10,8 @@ gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 exclude=kubelet kubeadm kubectl
-EOF
+" >> /etc/yum.repos.d/kubernetes.repo
+
 echo "\n---------------------------------------------------------------done"
 
 
