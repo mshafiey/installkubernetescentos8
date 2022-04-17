@@ -9,12 +9,12 @@ firewall-cmd --zone=public --permanent --add-port={6443,2379,2380,10250,10251,10
 echo "\n---------------------------------------------------------------done"
 
 echo "Allow docker access from another node, replace the worker-IP-address with yours."
-firewall-cmd --zone=public --permanent --add-rich-rule 'rule family=ipv4 source address=127.0.0.2/32 accept'
+firewall-cmd --zone=public --permanent --add-rich-rule 'rule family=ipv4 source address=10.4.2.5/22 accept'
 echo "\n---------------------------------------------------------------done"
 
 
 echo "Allow access to the hosts localhost from the docker container."
-firewall-cmd --zone=public --permanent --add-rich-rule 'rule family=ipv4 source address=127.0.0.1 accept'
+firewall-cmd --zone=public --permanent --add-rich-rule 'rule family=ipv4 source address=172.17.0.0/16 accept'
 echo "\n---------------------------------------------------------------done"
 
 
@@ -24,7 +24,7 @@ echo "\n---------------------------------------------------------------done"
 
 
 echo " Install CNI (container network interface) plugin for Kubernetes."
-kubeadm init --pod-network-cidr 127.0.0.0/16
+kubeadm init --pod-network-cidr 192.168.0.0/16
 echo "\n---------------------------------------------------------------done"
 
 
