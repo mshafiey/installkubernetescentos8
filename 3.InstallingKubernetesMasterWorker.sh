@@ -22,7 +22,7 @@ echo "\n---------------------------------------------------------------done"
 
 echo "Install all the necessary components for Kubernetes."
 dnf install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
-echo "\n---------------------------------------------------------------done"
+echo "'\n---------------------------------------------------------------done"
 
 
 echo "Start the Kubernetes services and enable them to run at startup."
