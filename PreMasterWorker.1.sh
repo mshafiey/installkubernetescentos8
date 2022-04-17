@@ -1,6 +1,6 @@
 echo "ervers are up to date before installing "
 dnf -y upgrade
-"echo \n---------------------------------------------------------------done"
+echo "\n---------------------------------------------------------------done"
 
 echo "Disable SELinux enforcement."
 setenforce 0
